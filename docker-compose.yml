@@ -1,0 +1,11 @@
+services:
+  bot:
+    build: .
+    restart: unless-stopped
+    environment:
+      BOT_TOKEN: ${BOT_TOKEN}
+      ADMIN_ID: ${ADMIN_ID}
+      TIMEZONE: Asia/Kolkata
+      DATABASE_PATH: /data/scheduler.db
+    volumes:
+      - ./data:/data
